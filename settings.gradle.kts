@@ -15,3 +15,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "MELI"
 include(":app")
+include(":shared")
+include(":domain")
+include(":data")
+include(":presentation")
