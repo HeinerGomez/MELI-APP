@@ -14,34 +14,43 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import com.avility.shared.ui.constants.Yellow200
+import com.avility.shared.ui.constants.Yellow500
+import com.avility.shared.ui.constants.black800
+import com.avility.shared.ui.constants.blue500
+import com.avility.shared.ui.constants.white100
+import com.avility.shared.ui.constants.white50
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = Yellow500,
+    secondary = blue500,
+    background = Yellow200,
+    surface = Yellow500,
+    primaryContainer = white50,
+    onPrimary = black800,
+    onSecondary = white100,
+    onBackground = black800,
+    onSurface = black800,
+    onPrimaryContainer = black800
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary = Yellow500,
+    secondary = blue500,
+    background = Yellow200,
+    surface = Yellow500,
+    primaryContainer = white50,
+    onPrimary = black800,
+    onSecondary = white100,
+    onBackground = black800,
+    onSurface = black800,
+    onPrimaryContainer = black800
 )
 
 @Composable
 fun MELITheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
