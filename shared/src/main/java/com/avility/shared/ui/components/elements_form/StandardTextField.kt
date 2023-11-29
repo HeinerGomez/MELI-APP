@@ -3,7 +3,6 @@ package com.avility.shared.ui.components.elements_form
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -68,8 +67,8 @@ fun StandardTextField(
     )
 }
 
-@Preview
 @Composable
+@Preview(showBackground = true)
 fun StandardTextFieldPreview() {
     StandardTextField(
         style = TextFieldStyle.Standard,
