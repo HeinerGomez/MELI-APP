@@ -51,9 +51,14 @@ dependencies {
     implementation Compose.navigation
     implementation Compose.viewModelCompose
     implementation Compose.activityCompose
+    implementation Coil.coilCompose
+    implementation LottieCompose.lottie
+    debugImplementation Compose.uiTooling
 
     kapt DaggerHilt.hiltCompiler
     implementation DaggerHilt.hiltAndroid
+
+    implementation Timber.timber
 
     testImplementation Testing.junit4
     testImplementation Testing.junitAndroidExt

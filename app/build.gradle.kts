@@ -43,6 +43,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     composeOptions {
@@ -66,6 +67,7 @@ dependencies {
     implementation(Compose.navigation)
     implementation(Compose.viewModelCompose)
     implementation(Compose.activityCompose)
+    debugImplementation(Compose.uiTooling)
 
     implementation(DaggerHilt.hiltAndroid)
     kapt(DaggerHilt.hiltCompiler)
@@ -81,6 +83,8 @@ dependencies {
     implementation(Retrofit.retrofit)
     implementation(Retrofit.okHttpLoggingInterceptor)
     implementation(Retrofit.moshiConverter)
+
+    implementation(Timber.timber)
 
     implementation(project(Modules.shared))
     implementation(project(Modules.data))

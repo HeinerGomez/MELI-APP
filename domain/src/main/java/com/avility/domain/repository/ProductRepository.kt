@@ -6,7 +6,7 @@ import com.avility.domain.model.SellerModel
 
 interface ProductRepository {
 
-    suspend fun getResultForSearch(query: String, offset: Int): ProductModel
+    suspend fun getResultForSearch(query: String, offset: Int): List<ProductModel>
 
     suspend fun getItemFromSearch(itemId: String): DetailProductModel
 

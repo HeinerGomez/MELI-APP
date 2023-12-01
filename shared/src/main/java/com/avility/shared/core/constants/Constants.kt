@@ -9,6 +9,7 @@ object Constants {
 
     // para determinar la cantidad de registros por pagina y controlar la paginación
     const val INCREMENT_OFFSET = 50
+    const val INITIAL_OFFSET = 0
 
     // parametro para el detalle del product
     const val PARAM_PRODUCT_ID = "productId"

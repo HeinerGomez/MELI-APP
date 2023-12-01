@@ -1,4 +1,4 @@
-package com.avility.meli.ui
+package com.avility.shared.ui
 
 sealed class Screen(val route: String) {
     data object ProductListScreen : Screen("product_list_screen")
