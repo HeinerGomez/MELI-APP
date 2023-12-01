@@ -1,5 +1,6 @@
 package com.avility.data.repository
 
+import com.avility.data.mappers.toModel
 import com.avility.data.remote.MeliAPI
 import com.avility.domain.model.BasicLocationModel
 import com.avility.domain.model.DetailProductModel
@@ -13,8 +14,8 @@ class ProductRepositoryImpl @Inject constructor(
     private val api: MeliAPI
 ) : ProductRepository {
 
-    override suspend fun getResultForSearch(query: String, offset: Int): ProductModel {
-        return ProductModel("", "", 3, 4, "", "")
+    override suspend fun getResultForSearch(query: String, offset: Int): List<ProductModel> {
+        return api.getResultsOfSearch(query, offset).results.map { it.toModel() }
     }
 
     override suspend fun getItemFromSearch(itemId: String): DetailProductModel {

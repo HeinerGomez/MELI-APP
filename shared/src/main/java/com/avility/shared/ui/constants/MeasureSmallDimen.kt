@@ -3,7 +3,7 @@ package com.avility.shared.ui.constants
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-enum class MeasureDimen(val value: Dp) {
+enum class MeasureSmallDimen(val value: Dp) {
     DIMEN_X00(0.dp),
     DIMEN_X01(2.dp),
     DIMEN_X02(4.dp),
@@ -55,4 +55,28 @@ enum class MeasureDimen(val value: Dp) {
     DIMEN_X48(96.dp),
     DIMEN_X49(98.dp),
     DIMEN_X50(100.dp),
+}
+
+enum class MeasureLargeDimen(val value: Dp) {
+    DIMEN_X00(0.dp),
+    DIMEN_X01(10.dp),
+    DIMEN_X02(20.dp),
+    DIMEN_X03(30.dp),
+    DIMEN_X04(40.dp),
+    DIMEN_X05(50.dp),
+    DIMEN_X06(60.dp),
+    DIMEN_X07(70.dp),
+    DIMEN_X08(80.dp),
+    DIMEN_X09(90.dp),
+    DIMEN_X10(100.dp),
+    DIMEN_X11(110.dp),
+    DIMEN_X12(120.dp),
+    DIMEN_X13(130.dp),
+    DIMEN_X14(140.dp),
+    DIMEN_X15(150.dp),
+    DIMEN_X16(160.dp),
+    DIMEN_X17(170.dp),
+    DIMEN_X18(180.dp),
+    DIMEN_X19(190.dp),
+    DIMEN_X20(200.dp),
 }

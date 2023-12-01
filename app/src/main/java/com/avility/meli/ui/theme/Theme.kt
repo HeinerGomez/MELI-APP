@@ -4,7 +4,6 @@ import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -14,37 +13,26 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.avility.shared.ui.constants.Yellow200
-import com.avility.shared.ui.constants.Yellow500
+import com.avility.shared.ui.constants.yellow200
+import com.avility.shared.ui.constants.yellow500
 import com.avility.shared.ui.constants.black800
 import com.avility.shared.ui.constants.blue500
 import com.avility.shared.ui.constants.white100
 import com.avility.shared.ui.constants.white50
+import com.avility.shared.ui.constants.yellow700
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Yellow500,
+private val lightColorScheme = lightColorScheme(
+    primary = yellow500,
     secondary = blue500,
-    background = Yellow200,
-    surface = Yellow500,
+    background = yellow200,
+    surface = yellow500,
     primaryContainer = white50,
     onPrimary = black800,
     onSecondary = white100,
     onBackground = black800,
     onSurface = black800,
-    onPrimaryContainer = black800
-)
-
-private val LightColorScheme = lightColorScheme(
-    primary = Yellow500,
-    secondary = blue500,
-    background = Yellow200,
-    surface = Yellow500,
-    primaryContainer = white50,
-    onPrimary = black800,
-    onSecondary = white100,
-    onBackground = black800,
-    onSurface = black800,
-    onPrimaryContainer = black800
+    onPrimaryContainer = black800,
+    tertiary = yellow700
 )
 
 @Composable
@@ -59,8 +47,8 @@ fun MELITheme(
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
 
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        darkTheme -> lightColorScheme
+        else -> lightColorScheme
     }
     val view = LocalView.current
     if (!view.isInEditMode) {
