@@ -1,0 +1,3 @@
+package com.avility.presentation.screens.product_detail
+
+sealed class ProductDetailAction

@@ -1,7 +1,8 @@
 package com.avility.shared.ui.components.others
 
 import androidx.annotation.RawRes
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,14 +16,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
+import com.avility.shared.ui.constants.MeasureLargeDimen
+import com.avility.shared.ui.constants.MeasureSmallDimen
 
 @Composable
-fun LottieEmptyScreen(
+fun LottieInfoScreen(
     @RawRes resource: Int,
     message: String,
     contentColor: Color = MaterialTheme.colorScheme.secondary
@@ -35,18 +37,21 @@ fun LottieEmptyScreen(
         speed = 1f
     )
 
-    Box(
+    Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(5.dp),
-        contentAlignment = Alignment.Center
+            .padding(MeasureSmallDimen.DIMEN_X03.value),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
         LottieAnimation(
-            modifier = Modifier.height(200.dp),
+            modifier = Modifier.height(MeasureLargeDimen.DIMEN_X20.value),
             composition = composition,
             progress = progress,
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(
+            MeasureSmallDimen.DIMEN_X10.value
+        ))
         Text(
             text = message,
             style = MaterialTheme.typography.bodyLarge.copy(

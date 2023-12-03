@@ -2,6 +2,7 @@ package com.avility.shared.ui.components.containers
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -30,7 +31,10 @@ fun BaseRowItem(
     leadingWeight: Float = 0.4f,
     trailingWeight: Float = 0.6f,
     dimensionParams: DimensionParams = DimensionParams(null, MeasureSmallDimen.DIMEN_X36.value),
-    onTap: () -> Unit = {}
+    withVerticalPadding: Boolean = true,
+    withHorizontalPadding: Boolean = true,
+    trailingArrangement: Arrangement.Horizontal = Arrangement.End,
+    onTap: (() -> Unit)? = null
 ) {
 
     return BasicContainer(
@@ -45,21 +49,34 @@ fun BaseRowItem(
         onTap = onTap
     ) {
         Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(MeasureSmallDimen.DIMEN_X04.value),
+            modifier = Modifier.fillMaxSize()
+                .padding(
+                    horizontal = if (withHorizontalPadding) {
+                        MeasureSmallDimen.DIMEN_X04.value
+                    } else {
+                        MeasureSmallDimen.DIMEN_X00.value
+                    },
+                    vertical = if (withVerticalPadding) {
+                        MeasureSmallDimen.DIMEN_X04.value
+                    } else {
+                        MeasureSmallDimen.DIMEN_X00.value
+                    }
+                ),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = horizontalArrangement
         ) {
             Row(
-                modifier = Modifier.weight(leadingWeight)
+                modifier = Modifier.weight(leadingWeight),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 leading()
             }
             trailing?.let {
                 Row(
-                    modifier = Modifier.weight(trailingWeight),
-                    horizontalArrangement = Arrangement.End
+                    modifier = Modifier.weight(trailingWeight)
+                        .fillMaxHeight(),
+                    horizontalArrangement = trailingArrangement,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     it()
                 }

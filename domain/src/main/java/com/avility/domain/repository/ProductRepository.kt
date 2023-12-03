@@ -9,6 +9,4 @@ interface ProductRepository {
     suspend fun getResultForSearch(query: String, offset: Int): List<ProductModel>
 
     suspend fun getItemFromSearch(itemId: String): DetailProductModel
-
-    suspend fun getConcreteSeller(sellerId: Int): SellerModel
 }
