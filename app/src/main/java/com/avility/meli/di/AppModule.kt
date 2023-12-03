@@ -2,7 +2,9 @@ package com.avility.meli.di
 
 import com.avility.data.remote.MeliAPI
 import com.avility.data.repository.ProductRepositoryImpl
+import com.avility.data.repository.SellerRepositoryImpl
 import com.avility.domain.repository.ProductRepository
+import com.avility.domain.repository.SellerRepository
 import com.avility.shared.core.constants.Constants
 import dagger.Module
 import dagger.Provides
@@ -46,5 +48,11 @@ object AppModule {
     @Singleton
     fun provideProductRepository(api: MeliAPI): ProductRepository {
         return ProductRepositoryImpl(api)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSellerRepository(api: MeliAPI): SellerRepository {
+        return SellerRepositoryImpl(api)
     }
 }

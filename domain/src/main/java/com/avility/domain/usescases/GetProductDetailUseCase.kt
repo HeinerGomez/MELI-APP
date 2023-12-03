@@ -1,24 +1,23 @@
 package com.avility.domain.usescases
 
-import com.avility.domain.model.ProductModel
+import com.avility.domain.model.DetailProductModel
 import com.avility.domain.repository.ProductRepository
-import com.avility.shared.core.constants.Constants
-import com.avility.shared.core.constants.Resource
 import com.avility.shared.R
+import com.avility.shared.core.constants.Resource
 import timber.log.Timber
 import javax.inject.Inject
 
-class SearchProductsUseCase @Inject constructor(
+class GetProductDetailUseCase @Inject constructor(
     private val productRepository: ProductRepository
 ) {
 
-    suspend operator fun invoke(query: String): Resource<List<ProductModel>?> {
-        var resourceResult: Resource<List<ProductModel>?> = Resource.Error(
+    suspend operator fun invoke(id: String): Resource<DetailProductModel?> {
+        var resourceResult: Resource<DetailProductModel?> = Resource.Error(
             R.string.generic_error
         )
 
         runCatching {
-            productRepository.getResultForSearch(query, Constants.INITIAL_OFFSET)
+            productRepository.getItemFromSearch(id)
         }.onFailure {
             Timber.e(it)
             resourceResult = Resource.Error(R.string.generic_error)

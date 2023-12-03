@@ -19,8 +19,8 @@ fun Navigation() {
         composable(Screen.ProductListScreen.route) {
             ProductListScreen(navController)
         }
-        composable(Screen.DetailProductScreen.route) {
-            ProductDetailScreen()
+        composable(Screen.DetailProductScreen.route + "/{productId}") {
+            ProductDetailScreen(navController)
         }
     }
 }

@@ -15,7 +15,7 @@ import com.avility.presentation.components.ProductItem
 import com.avility.shared.ui.Screen
 import com.avility.shared.ui.components.containers.MainContainer
 import com.avility.shared.ui.components.elements_form.SearchTextField
-import com.avility.shared.ui.components.others.LottieEmptyScreen
+import com.avility.shared.ui.components.others.LottieInfoScreen
 import com.avility.shared.ui.styles.elements_form.TextFieldStyle
 
 @Composable
@@ -51,7 +51,7 @@ fun ProductListScreen(
             LazyColumn {
                 items(state.data) { product ->
                     ProductItem(product) {
-                        navController.navigate(Screen.DetailProductScreen.route)
+                        navController.navigate(Screen.DetailProductScreen.route + "/${product.id}")
                     }
                     HorizontalDivider()
                 }
@@ -60,7 +60,13 @@ fun ProductListScreen(
 
         state.data.ifEmpty {
             if (!state.isLoading) {
-                LottieEmptyScreen(
+                state.errorMessage?.let {
+                    LottieInfoScreen(
+                        resource = SharedResource.raw.error_alert,
+                        message = stringResource(it),
+                        contentColor = MaterialTheme.colorScheme.tertiary
+                    )
+                } ?: LottieInfoScreen(
                     resource = SharedResource.raw.empty_search,
                     message = stringResource(R.string.search_field_placeholder),
                     contentColor = MaterialTheme.colorScheme.tertiary
