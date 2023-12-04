@@ -48,6 +48,13 @@ import com.avility.shared.ui.constants.gray400
 import com.avility.shared.ui.constants.gray50
 import com.avility.shared.ui.styles.DimensionParams
 
+/**
+ * [ProductDetailScreen] screen to show the detail of a concrete product
+ *
+ * @author Heiner Gómez
+ * @param [navController] to move across the screens
+ * @param [viewModel] to handle the flow of data and his state
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProductDetailScreen(

@@ -8,6 +8,11 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
+/**
+ * [MeliAPI] interface to implement retrofit
+ *
+ * @author Heiner Gómez
+ */
 interface MeliAPI {
 
     @GET("sites/${Constants.DEFAULT_SITE_ID}/search")
