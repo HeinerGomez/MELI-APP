@@ -34,6 +34,13 @@ import com.avility.shared.ui.constants.orange800
 import com.avility.shared.ui.constants.roundedShapes
 import com.avility.shared.ui.styles.DimensionParams
 
+/**
+ * [ProductItem] local component to draw each item of product
+ *
+ * @author Heiner Gómez
+ * @param [productModel] model with the necessary data to configure this component
+ * @param [onTap] to handle an action tap
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProductItem(

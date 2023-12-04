@@ -8,6 +8,12 @@ import com.avility.shared.R
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * [SearchProductsUseCase] to handle the search of product by his name
+ *
+ * @author Heiner Gómez
+ * @param [productRepository] to connect with the data
+ */
 class SearchProductsUseCase @Inject constructor(
     private val productRepository: ProductRepository
 ) {

@@ -10,6 +10,14 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * [ProductDetailViewModel] viewModel to handle the flow of data of detail of product
+ *
+ * @author Heiner Gómez
+ * @param [getProductDetailUseCase] use case to get the detail of a product
+ * @param [getSellerUseCase] use case to get the seller associated to a concrete product
+ * @param [savedStateHandle] to recover the params that arrived for url in the navController
+ */
 @HiltViewModel
 class ProductDetailViewModel @Inject constructor(
     private val getProductDetailUseCase: GetProductDetailUseCase,

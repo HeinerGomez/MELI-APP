@@ -8,6 +8,11 @@ import com.avility.presentation.screens.product_detail.ProductDetailScreen
 import com.avility.presentation.screens.product_list.ProductListScreen
 import com.avility.shared.ui.Screen
 
+/**
+ * [Navigation] to handle the flow between the screens
+ *
+ * @author Heiner Gómez
+ */
 @Composable
 fun Navigation() {
     val navController = rememberNavController()

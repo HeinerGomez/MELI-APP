@@ -7,6 +7,12 @@ import com.avility.shared.core.constants.Resource
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * [GetProductDetailUseCase] to get the detail of a concrete product
+ *
+ * @author Heiner Gómez
+ * @param [productRepository] to connect with the data
+ */
 class GetProductDetailUseCase @Inject constructor(
     private val productRepository: ProductRepository
 ) {

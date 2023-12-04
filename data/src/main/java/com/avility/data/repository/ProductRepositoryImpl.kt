@@ -8,6 +8,11 @@ import com.avility.domain.model.ProductModel
 import com.avility.domain.repository.ProductRepository
 import javax.inject.Inject
 
+/**
+ * [ProductRepository] to handle all data related with products
+ *
+ * @param api [MeliAPI] to make requests
+ */
 class ProductRepositoryImpl @Inject constructor(
     private val api: MeliAPI
 ) : ProductRepository {

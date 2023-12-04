@@ -19,6 +19,13 @@ import com.avility.shared.ui.components.elements_form.SearchTextField
 import com.avility.shared.ui.components.others.LottieInfoScreen
 import com.avility.shared.ui.styles.elements_form.TextFieldStyle
 
+/**
+ * [ProductListScreen] to show the search screen
+ *
+ * @author Heiner Gómez
+ * @param [navController] to move across the screens
+ * @param [viewModel] to handle the flow of data and his state
+ */
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun ProductListScreen(

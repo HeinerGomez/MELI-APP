@@ -17,6 +17,11 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
 import javax.inject.Singleton
 
+/**
+ * Module of application to inject the necessary dependencies
+ *
+ * @author Heiner Gómez
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
