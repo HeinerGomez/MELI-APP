@@ -98,6 +98,9 @@ dependencies {
     testImplementation(Testing.coroutines)
     testImplementation(Testing.composeUiTest)
     testImplementation(Testing.mockk)
+    testImplementation(Testing.mockito)
+    testImplementation(Testing.hiltTesting)
+    testImplementation(Testing.mockitoKotlin)
     testImplementation(Testing.mockWebServer)
 
     androidTestImplementation(Testing.junit4)
@@ -114,8 +117,4 @@ dependencies {
 
 kapt {
     correctErrorTypes = true
-}
-
-hilt {
-    enableAggregatingTask = false
 }

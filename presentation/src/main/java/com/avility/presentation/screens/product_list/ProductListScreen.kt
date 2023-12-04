@@ -2,9 +2,10 @@ package com.avility.presentation.screens.product_list
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -18,6 +19,7 @@ import com.avility.shared.ui.components.elements_form.SearchTextField
 import com.avility.shared.ui.components.others.LottieInfoScreen
 import com.avility.shared.ui.styles.elements_form.TextFieldStyle
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun ProductListScreen(
     navController: NavController,
@@ -27,7 +29,7 @@ fun ProductListScreen(
     val keyboardController = LocalSoftwareKeyboardController.current
 
     MainContainer(
-        isLoading = viewModel.uiState.value.isLoading,
+        isLoading = state.isLoading,
         header = {
             SearchTextField(
                 style = TextFieldStyle.Standard,
@@ -53,7 +55,7 @@ fun ProductListScreen(
                     ProductItem(product) {
                         navController.navigate(Screen.DetailProductScreen.route + "/${product.id}")
                     }
-                    HorizontalDivider()
+                    Divider()
                 }
             }
         }
