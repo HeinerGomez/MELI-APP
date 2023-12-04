@@ -6,6 +6,12 @@ import com.avility.domain.model.SellerModel
 import com.avility.domain.repository.SellerRepository
 import javax.inject.Inject
 
+/**
+ * repository to handle the data related of seller
+ *
+ * @author Heiner Gómez
+ * @param api [MeliAPI] to make requests
+ */
 class SellerRepositoryImpl @Inject constructor(
     private val api: MeliAPI
 ) : SellerRepository {
