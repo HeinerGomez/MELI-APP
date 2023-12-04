@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Badge
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -33,6 +34,7 @@ import com.avility.shared.ui.constants.orange800
 import com.avility.shared.ui.constants.roundedShapes
 import com.avility.shared.ui.styles.DimensionParams
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProductItem(
     productModel: ProductModel,

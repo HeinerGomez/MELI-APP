@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
-import coil.compose.rememberAsyncImagePainter
+import coil.compose.rememberImagePainter
 import com.avility.shared.ui.components.containers.BasicContainer
 import com.avility.shared.ui.constants.MeasureSmallDimen
 
@@ -17,8 +17,8 @@ fun RemoteImage(
     contentScale: ContentScale = ContentScale.Crop,
 ) {
     return Image(
-        painter = rememberAsyncImagePainter(
-            model = url
+        painter = rememberImagePainter(
+            data = url
         ),
         contentDescription = "",
         modifier = Modifier.fillMaxSize(),

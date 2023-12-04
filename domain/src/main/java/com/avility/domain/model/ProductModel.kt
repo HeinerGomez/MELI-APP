@@ -10,6 +10,6 @@ data class ProductModel (
 )
 
 sealed class ConditionProduct(val code: String, val value: String) {
-    data object New : ConditionProduct("new", "Nuevo")
-    data object Used : ConditionProduct("used", "Usado")
+    object New : ConditionProduct("new", "Nuevo")
+    object Used : ConditionProduct("used", "Usado")
 }

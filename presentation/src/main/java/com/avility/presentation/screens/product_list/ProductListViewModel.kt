@@ -1,5 +1,10 @@
 package com.avility.presentation.screens.product_list
 
+import androidx.compose.runtime.State
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.avility.domain.usescases.SearchProductsUseCase
 import com.avility.presentation.screens.BaseViewModel

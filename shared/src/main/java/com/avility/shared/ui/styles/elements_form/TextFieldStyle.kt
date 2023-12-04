@@ -10,7 +10,7 @@ sealed class TextFieldStyle(
     open val contentColor: Color? = null,
     open val fontSize: Float? = null
 ) {
-    data object Standard : TextFieldStyle(
+    object Standard : TextFieldStyle(
         dimensionParams = DimensionParams(
             height = MeasureSmallDimen.DIMEN_X24.value
         ),

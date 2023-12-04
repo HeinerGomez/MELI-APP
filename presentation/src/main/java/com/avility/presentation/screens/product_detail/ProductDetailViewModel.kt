@@ -23,9 +23,7 @@ class ProductDetailViewModel @Inject constructor(
         }
     }
 
-    override fun dispatchAction(action: ProductDetailAction) {
-
-    }
+    override fun dispatchAction(action: ProductDetailAction) {}
 
     private fun getDetailData(productId: String) {
         viewModelScope.launch {

@@ -15,6 +15,11 @@ object Testing {
     const val mockk = "io.mockk:mockk:$mockkVersion"
     const val mockkAndroid = "io.mockk:mockk-android:$mockkVersion"
 
+    private const val mockitoVersion = "5.8.0"
+    private const val mockitoKotlinVersion = "5.2.1"
+    const val mockito = "org.mockito:mockito-core:$mockitoVersion"
+    const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion"
+
     private const val mockWebServerVersion = "4.12.0"
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion"
 
